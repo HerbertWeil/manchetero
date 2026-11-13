@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manchete RO – Sua marca merece ser notícia</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+:root{--o:#FF6D29;--bg:#161316;--br:#453027;--cr:#BABABA;--mut:#8f8a8c;--noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--cr);font:400 17px/1.7 'Plus Jakarta Sans',Inter,Arial,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Plus Jakarta Sans',Inter,Arial,sans-serif;font-weight:700;text-transform:none;line-height:1.04;letter-spacing:-.035em;margin:0 0 .5em;color:#fff}
+h2{font-size:clamp(34px,5.6vw,66px)}h2 .o,h2 .k,h1 .o{color:var(--o)}
+p{margin:0 0 1em}.w{max-width:1100px;margin:auto}
+.kick{font:500 13px 'Space Grotesk',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--o);margin-bottom:14px}
+.sec,.hero,footer{position:relative;isolation:isolate}
+.sec{padding:96px 20px}
+.sec::before,.hero::before,footer::before{content:"";position:absolute;inset:0;background:var(--noise);opacity:.07;pointer-events:none;z-index:-1}
+.hero::after,.sec.cr::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 50% 30%,#000,transparent 75%)}
+.hero{overflow:hidden;padding:28px 20px 100px;background:radial-gradient(ellipse 70% 60% at 88% -10%,rgba(255,109,41,.55),transparent 62%),radial-gradient(ellipse 60% 50% at 0 100%,var(--br),transparent 70%),var(--bg)}
+.or{background:radial-gradient(ellipse 60% 50% at 100% 0,rgba(255,109,41,.26),transparent 65%),radial-gradient(ellipse 50% 40% at 0 100%,var(--br),transparent),var(--bg)}
+.cr{background:radial-gradient(ellipse 55% 45% at 0 0,rgba(255,109,41,.18),transparent 65%),var(--bg)}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+@media(max-width:820px){.two,.hg{grid-template-columns:1fr!important;gap:40px}}
+.lg{font:800 26px/.95 'Plus Jakarta Sans',sans-serif;letter-spacing:-.5px;color:#fff;text-transform:uppercase;position:relative;padding-left:16px}
+.lg::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:2px;background:var(--o);box-shadow:0 0 14px var(--o)}
+.lg b{display:block;font-weight:800}.lg b+b{color:var(--o)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.hg{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;margin-top:76px}
+.h1{font-size:clamp(44px,7.2vw,96px);line-height:1;margin-bottom:24px;animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(40px)}}
+.sub{font-size:19px;max-width:520px;margin-bottom:32px}
+.strip{display:grid;gap:16px}.strip .win{animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.strip .win:nth-child(2){animation-delay:.15s;margin-left:28px}.strip .win:nth-child(3){animation-delay:.3s}.strip .win:nth-child(4){animation-delay:.45s;margin-left:28px}
+.strip .win{padding:18px 20px}.strip .win h3{font-size:17px}.strip .win .b{font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--o);color:#fff;font:600 15px 'Plus Jakarta Sans',sans-serif;padding:7px 7px 7px 26px;border-radius:50px;border:0;text-decoration:none;cursor:pointer;margin:0 8px 8px 0;transition:box-shadow .3s,transform .2s}
+.btn::after{content:"↗";display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--o);font-size:19px}
+.btn:hover{box-shadow:0 0 38px rgba(255,109,41,.7);transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.25)}.btn.ghost::after{background:rgba(255,255,255,.14);color:#fff}
+.btn.sm{padding:5px 5px 5px 20px;font-size:14px}.btn.sm::after{width:32px;height:32px;font-size:16px}
+.win{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:22px;padding:26px;position:relative;color:var(--cr);box-shadow:0 24px 44px -18px rgba(0,0,0,.8);transition:transform .3s,box-shadow .3s}
+.win::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(160deg,rgba(255,109,41,.7),rgba(255,255,255,.1) 40%,transparent 75%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none}
+.win:hover{transform:translateY(-6px);box-shadow:0 30px 50px -18px rgba(0,0,0,.9),0 0 50px -18px rgba(255,109,41,.6)}
+.win>i,.url,.win::after{display:none}
+.win .ic{position:absolute;right:20px;top:20px;width:44px;height:44px;padding:10px;border-radius:12px;background:rgba(255,109,41,.12);border:1px solid rgba(255,109,41,.35);fill:none;stroke:var(--o);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tag{display:inline-block;font:500 12px 'Space Grotesk',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:14px}
+.win h3{font-size:21px;line-height:1.25;letter-spacing:-.02em;margin:0 0 10px;padding-right:54px}
+.win .b{font-size:15px;line-height:1.65}
+.stat{font:700 clamp(50px,7vw,76px)/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.045em;color:var(--o);margin:6px 0 14px;text-shadow:0 0 40px rgba(255,109,41,.45)}
+.stats h3{padding-right:0}
+.src{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:var(--mut)}.src a{color:var(--o)}
+.rv{opacity:0;translate:0 34px;transition:opacity .8s,translate .8s cubic-bezier(.2,.8,.2,1),transform .3s,box-shadow .3s}
+.rv.in{opacity:1;translate:0 0}.rv:nth-child(3n+2){transition-delay:.12s,.12s,0s,0s}.rv:nth-child(3n){transition-delay:.24s,.24s,0s,0s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin-top:40px}
+ul.ck{list-style:none;padding:0;margin:0}
+ul.ck li{padding:9px 0 9px 28px;position:relative;border-bottom:1px solid rgba(255,255,255,.09);font-size:14.5px}
+ul.ck li::before{content:"✓";position:absolute;left:0;color:var(--o);font-weight:700}
+.fr{background:rgba(255,255,255,.05);padding:10px;border-radius:22px;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px -20px rgba(0,0,0,.85),0 0 70px -24px rgba(255,109,41,.45);position:relative;color:var(--cr)}
+.fr::before,.fr::after{content:"";position:absolute;width:28px;height:28px;border:2px solid var(--o);pointer-events:none}
+.fr::before{top:-7px;left:-7px;border-right:0;border-bottom:0;border-radius:10px 0 0 0}
+.fr::after{bottom:-7px;right:-7px;border-left:0;border-top:0;border-radius:0 0 10px 0}
+.ph{display:grid;place-items:center;text-align:center;font:500 14px 'Space Grotesk',monospace;padding:12px;color:var(--mut);border-radius:14px;aspect-ratio:3/4;background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/24px 24px,#1f1b1e}
+.fr.h .ph{aspect-ratio:16/9}.fr figcaption{font-size:13.5px;line-height:1.6;padding:14px 8px 10px}
+figure{margin:0}
+.mq{border-block:1px solid rgba(255,255,255,.1);color:var(--cr);font:500 13px 'Space Grotesk',monospace;letter-spacing:.22em;text-transform:uppercase;overflow:hidden;white-space:nowrap;padding:14px 0;background:rgba(255,255,255,.02)}
+.mq span{display:inline-block;animation:mq 30s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+.car{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 8px 30px;margin-top:20px}
+.car>figure{flex:0 0 min(700px,82vw);scroll-snap-align:center}.car .ph{aspect-ratio:7/10}
+.ctl{display:flex;gap:12px}.ctl button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,109,41,.6);background:rgba(255,109,41,.1);color:#fff;font-size:22px;cursor:pointer;transition:box-shadow .3s}.ctl button:hover{box-shadow:0 0 28px rgba(255,109,41,.6)}
+ol.st{counter-reset:s;list-style:none;padding:0;margin:0;position:relative}
+ol.st::before{content:"";position:absolute;left:21px;top:24px;bottom:24px;width:2px;background:linear-gradient(var(--o),rgba(255,109,41,.12))}
+ol.st li{counter-increment:s;position:relative;margin:0 0 14px 66px;padding:15px 20px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);font-size:16px;line-height:1.5;color:#fff;transition:border-color .3s}
+ol.st li:hover{border-color:rgba(255,109,41,.6)}
+ol.st li::before{content:"0" counter(s);position:absolute;left:-66px;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;background:var(--bg);border:2px solid var(--o);color:#fff;font:600 15px/40px 'Space Grotesk',monospace;text-align:center;box-shadow:0 0 0 7px rgba(255,109,41,.12),0 0 26px rgba(255,109,41,.75)}
+.pr{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:26px;margin-top:40px;align-items:stretch}
+.pc{display:flex;flex-direction:column}.pc.hl{box-shadow:0 0 70px -14px rgba(255,109,41,.55),0 24px 44px -18px #000}
+.pc ul{flex:1;margin-bottom:20px}.pc output{display:block;font:700 46px/1.1 'Plus Jakarta Sans',sans-serif;letter-spacing:-.04em;color:var(--o)}
+.n{font-size:13px;color:var(--cr)}.n b{color:#fff}input[type=range]{width:100%;accent-color:var(--o);margin:14px 0 10px}
+.pc .btn{margin:18px 0 0;justify-content:space-between;padding-left:26px}
+form.win{max-width:760px;display:grid;gap:18px;margin-top:34px}
+label{font:500 14px 'Plus Jakarta Sans',sans-serif;color:#fff;display:grid;gap:8px}
+input:not([type=range]),textarea{font:400 16px 'Plus Jakarta Sans',sans-serif;padding:14px 16px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;border-radius:14px;width:100%;transition:border-color .3s,box-shadow .3s}
+input:focus,textarea:focus{outline:0;border-color:var(--o);box-shadow:0 0 0 4px rgba(255,109,41,.2)}textarea{min-height:150px}
+#ok{display:none;max-width:760px;margin-top:34px}
+details.win{margin-bottom:18px;padding:22px 26px}summary{cursor:pointer;font:600 18px 'Plus Jakarta Sans',sans-serif;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--o);font-size:24px;line-height:1}details[open] summary::after{content:"–"}details p{margin:14px 0 0;font-size:15px}
+footer{background:#0f0d0f;border-top:1px solid rgba(255,255,255,.08);padding:64px 20px;text-align:center;font-size:15px}
+footer .lg{display:inline-block;text-align:left;margin-bottom:28px;font-size:30px}footer a{color:var(--o)}footer b{color:#fff}
+@media(prefers-reduced-motion:reduce){*,.strip .win,.h1{animation:none!important;transition:none!important}.rv{opacity:1;translate:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-news" viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 12h7M7 15h4"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+<symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+<symbol id="i-pc" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20M7 9h6M7 12h10"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol>
+<symbol id="i-s" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+<symbol id="i-hand" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.4-1.2-2.5-1.2-1.4 0-2.5.7-2.5 1.8 0 2.5 5 1.2 5 3.7 0 1.1-1.1 1.8-2.5 1.8-1.1 0-2.1-.4-2.5-1.2M12 6.5V8m0 8v1.5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 14 2 2 4-4"/></symbol>
+<symbol id="i-run" viewBox="0 0 24 24"><circle cx="15" cy="4.5" r="2"/><path d="M14 8l-3 6M14 9l4 2 1.5-1.5M14 9l-4-.5L8 11M11 14l4 3-1 4M11 14l-3 4-3-1"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+</defs></svg>
+<header class="hero"><div class="w">
+<div class="top"><div class="lg"><b>Manchete</b><b>RO</b></div><a class="btn sm" href="#pedido">Fazer pedido</a></div>
+<div class="hg"><div><div class="kick">Assessoria de imprensa · Rondônia</div>
+<h1 class="h1">Sua marca <span class="o">merece ser</span> notícia!</h1>
+<p class="sub">Assessoria de imprensa e produção de notícias para empresas, com publicação em sites de todo o Estado.</p>
+<a class="btn" href="#pedido">Faça seu pedido</a><a class="btn ghost" href="#valores">Ver valores</a></div>
+<div class="strip" id="strip"></div></div></div></header>
+<div class="mq"><span>Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ </span></div>
+
+<section class="sec cr"><div class="w two">
+<div class="rv"><div class="kick">Manchete RO</div><h2>Sua empresa na <span class="o">imprensa,</span> sem pagar pelo espaço!</h2>
+<p>Tenha notícias sobre seus serviços e produtos publicadas em sites de notícia de todo o Estado com qualidade, rapidez, abrangência e sem ter de pagar pelo espaço no site dos jornais.</p><a class="btn" href="#pedido">Peça seu orçamento</a></div>
+<figure class="fr rv"><div class="ph">Sua foto aqui<br>(proporção 3:4)</div><figcaption><strong>Herbert Weil</strong>, jornalista há quase 20 anos, secretário municipal de Comunicação de Vilhena de 2018 a 2022, assessor de comunicação na Câmara de Vereadores de Vilhena, fotógrafo, especialista em Jornalismo Digital.</figcaption></figure>
+</div></section>
+
+<section class="sec or"><div class="w stats"><div class="kick">Os números da assessoria de imprensa</div><h2>O que dizem as <span class="o">pesquisas</span></h2><div class="grid"><article class="win rv"><span class="tag">Pautas</span><div class="stat">66%</div><h3>De onde os jornalistas tiram ideias para suas notícias?</h3><div class="b">Cerca de 66% dos jornalistas afirmam que tiram ideias de matérias e reportagens diretamente de press releases e materiais enviados por assessorias, à frente de redes sociais (45%), de outros veículos (37%) e das agências de notícias (32%).</div><div class="src">Fonte: <a href="https://www.cision.com/resources/guides-and-reports/sotm/" target="_blank" rel="noopener">2026 State of the Media Report</a></div></article><article class="win rv"><span class="tag">Relacionamento</span><div class="stat">63,5%</div><h3>Os sites de notícia gostam das empresas?</h3><div class="b">No Brasil, 63,5% dos jornalistas declaram desejar mais relacionamento e proximidade com assessores de imprensa para construir pautas em conjunto.</div><div class="src">Fonte: <a href="https://www.pressmanager.com.br/635-dos-jornalistas-de-redacao-estao-abertos-a-encontros-de-relacionamento-com-assessores-em-2026" target="_blank" rel="noopener">Press Manager</a></div></article><article class="win rv"><span class="tag">Mercado</span><div class="stat">R$ 5,7 bi</div><h3>Empresas reconhecem o valor da assessoria</h3><div class="b">O setor só cresce, vai ficar de fora? O mercado brasileiro de comunicação corporativa faturou R$ 5,72 bilhões referente ao ano de 2025, um crescimento de 2,44%.</div><div class="src">Fonte: <a href="https://revistapegn.globo.com/conteudo-de-marca/pressworks/noticia/2026/07/mercado-de-comunicacao-corporativa-cresce-e-reforca-espaco-da-assessoria-de-imprensa-1.ghtml" target="_blank" rel="noopener">Anuário da Comunicação Corporativa</a></div></article></div></div></section>
+
+<section class="sec or"><div class="w">
+<div class="kick">Extra! Extra!</div><h2><span>Nosso</span> <span class="k">serviço</span></h2>
+<div class="grid" id="serv"></div>
+<div class="grid" id="ad" style="margin-top:44px"></div></div></section>
+
+<section class="sec cr"><div class="w">
+<div class="two"><div class="rv"><div class="kick">Edição especial</div><h2>Publicações <span class="o">recentes</span></h2>
+<p>Navegue aqui por algumas matérias nossas publicadas na imprensa estadual, nacional e internacional.</p>
+<div class="ctl"><button aria-label="Anterior" onclick="sl(-1)">←</button><button aria-label="Próximo" onclick="sl(1)">→</button></div></div>
+<div class="rv" style="text-align:center"><div class="lg" style="display:inline-block;font-size:30px;margin-bottom:18px"><b>Herbert Weil</b><b>Comunicação e Fotografia</b></div><div class="ph" style="aspect-ratio:3/1">Insira aqui a logo<br>“Herbert Weil Comunicação e Fotografia”</div></div></div>
+<div class="car" id="car"></div></div></section>
+
+<section class="sec or"><div class="w">
+<div class="kick">Por que ser notícia?</div><h2>Vantagens do <span class="k">Manchete RO</span></h2>
+<div class="grid" id="vant"></div></div></section>
+
+<section class="sec cr"><div class="w two">
+<div class="rv"><div class="kick">Passo a passo</div><h2>Como <span class="o">funciona</span></h2>
+<ol class="st"><li>Você oferece informações básicas</li><li>Identificamos os valores-notícia adequados</li><li>Buscamos dados adicionais complementares</li><li>Produzimos o texto, editamos fotos e geramos gráficos</li><li>Você recebe o material, analisa e aprova</li><li>Disparamos para toda nossa rede de contatos via e-mail e WhatsApp</li><li>Fazemos relatório de publicações e clipping*</li></ol>
+<p style="font-size:14px;margin-top:14px">* Serviços a serem disponibilizados conforme os pacotes descritos abaixo.</p></div>
+<figure class="fr rv" style="--r:-1.5deg"><div class="ph">Sua foto aqui<br>(proporção 3:4)</div></figure>
+</div></section>
+
+<section class="sec or" id="valores"><div class="w">
+<div class="kick">Tabela de preços</div><h2><span>Valores</span></h2>
+<p style="color:var(--cr)">Arraste o controlador dentro de cada opção e veja o valor de 1 a 30 matérias.</p>
+<div class="pr" id="pr"></div></div></section>
+
+<section class="sec cr" id="pedido"><div class="w">
+<div class="kick">Fale com a redação</div><h2>Faça já seu <span class="o">pedido</span> de matéria aqui</h2>
+<p>Descreva o que deseja e retornaremos com o orçamento!</p>
+<form class="win" id="f"><i></i>
+<label>Nome<input name="nome" type="text" required></label>
+<label>WhatsApp (somente números)<input name="whatsapp" type="tel" inputmode="numeric" pattern="[0-9]{10,13}" placeholder="69981464080" required></label>
+<label>E-mail<input name="email" type="email" required></label>
+<label>Escreva aqui as informações básicas sobre o que você deseja que vire notícia<textarea name="msg" required></textarea></label>
+<label>Fotos<input name="fotos" type="file" accept="image/*" multiple required></label>
+<button class="btn" id="bt" type="submit">Enviar pedido</button></form>
+<div class="win" id="ok" role="status"><i></i><div class="url">MANCHETERO</div><h3>Pedido enviado com sucesso! Entraremos em contato e em até 24h seu texto poderá estar em seu e-mail!</h3></div>
+</div></section>
+
+<section class="sec or"><div class="w">
+<div class="kick">Fique tranquilo</div><h2><span>Talvez você</span> <span class="k">esteja pensando…</span></h2>
+<div id="faq" style="margin-top:36px"></div></div></section>
+
+<section class="sec cr"><div class="w"><figure class="fr h rv"><div class="ph">Sua foto aqui<br>(retangular horizontal)</div></figure></div></section>
+
+<footer><div class="lg"><b>Manchete</b><b>RO</b></div>
+<p><b>Manchete RO</b> é um serviço exclusivo de <b>Herbert Weil Comunicação e Fotografia</b></p>
+<p><a href="mailto:herbertweilfotografia@gmail.com">herbertweilfotografia@gmail.com</a> / <a href="https://wa.me/5569981464080">69 98146-4080</a></p></footer>
+
+<script>
+const $=s=>document.querySelector(s),I=['news','mic','cam','pc','mail','chart'];let ni=0;
+const win=(t,p,tag='',c='rv',ico,d=I[ni++%6])=>`<article class="win ${c}"><i></i><svg class="ic"><use href="#i-${ico||d}"/></svg><div class="url"><svg><use href="#i-s"/></svg>MANCHETERO</div><span class="tag">${tag}</span><h3>${t}</h3><div class="b">${p}</div></article>`;
+const cards=(s,a)=>$(s).innerHTML=a.map(x=>win(x[0],x[1])).join('');
+const ul=a=>'<ul class="ck">'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
+$('#strip').innerHTML=[['Notícia, não anúncio','Chega ao leitor como informação e reforça a confiança no nome da empresa.','Credibilidade','hand'],['Sem pagar pelo espaço','Sua pauta publicada em sites de notícia de todo o Estado.','Economia','coin'],['Texto pronto','Redação, fotos e gráficos prontos para o veículo publicar.','Praticidade','doc'],['Envio no mesmo dia','Para mais de 1.000 contatos de imprensa em Rondônia.','Agilidade','run']].map(x=>win(x[0],x[1],x[2],'',x[3])).join('');
+$('#ad').innerHTML=win('Serviços adicionais embutidos',ul(['Edição das imagens ilustrativas das matérias','Produção de gráficos ou ilustrações','Envio de todos os links onde a matéria foi publicada']),'Incluso')+win('Serviços adicionais opcionais',ul(['Agendamento de entrevistas em rádios, TVs e sites de notícia','Relatório detalhado com todos os sites que publicaram o texto','Clipping de página inteira de cada matéria para registro','Produção de publicações para redes sociais da matéria publicada','Elaboração de plano de assessoria de imprensa para outras matérias da empresa','Envio de matérias a veículos, revistas e canais especializados no nicho da marca','Acompanhamento de comentários nas matérias']),'Opcional');
+cards('#serv',[
+['Escrita profissional','Produzimos textos noticiosos que seguem a estrutura técnica jornalística exigida pelos sites de notícia para publicar algo.'],
+['Abrangência','As matérias são enviadas para mais 1.000 e-mails e contatos diretos de jornalistas em todas as regiões do Estado, desde sites de notícia, rádios, emissoras de televisão e colunistas.'],
+['Pronto para publicação','A redação do jornal recebe um texto, fotos e gráficos / ilustrações feitos por nós pronto para ser aproveitado, com menos necessidade de reescrita, o que aumenta as chances de publicação.'],
+['Relacionamento estratégico','O serviço é voltado aos veículos de comunicação do estado de Rondônia. O relacionamento estratégico construído ao longo de quase 20 anos de atuação do nosso time permite contato direto com os veículos de comunicação e penetração em diversos portais de notícias.'],
+['Agilidade','Textos produzidos e enviados no mesmo dia. Excelente para gerenciamento de crises, respostas rápidas, emissão de alertas e disparo de informações que ficaram pra última hora.'],
+['Identificação de pautas','Muitas empresas têm fatos noticiáveis e não percebem. O Manchete RO identifica esses assuntos e os transforma em um texto irresistível para a imprensa publicar.']]);
+cards('#vant',[
+['Credibilidade que a propaganda não oferece','Uma notícia publicada chega ao leitor como informação, não como propaganda. Isso reforça a confiança no nome da empresa.'],
+['Custo menor que anúncio','Quando a pauta é publicada, a empresa aparece na mídia sem pagar pelo espaço, ao contrário de um anúncio.'],
+['A imprensa também está nas redes','Os sites de notícia mantêm grupos de WhatsApp, páginas de Instagram e Facebook ativas, divulgando o que publicam. Assim, seu material será distribuído pelos veículos também nestes espaços sem você pagar por isso.'],
+['Evite contratações adicionais','É comum médias ou grandes empresas terem um profissional apenas para lidar com a imprensa. Evite esse investimento: nosso serviço pode atender você constantemente sem encargos trabalhistas ou complicações burocráticas com o RH.'],
+['Tempo do empresário preservado','Em pequenas e médias empresas, também é comum o dono ou gerente escreverem as matérias para a imprensa ou terem de fazer esse trabalho junto de um jornalista. O Manchete RO cuida de todas essas etapas liberando tempo valioso.'],
+['Presença constante na mídia','Com pautas planejadas ao longo dos meses, a empresa deixa de aparecer apenas em ações isoladas e passa a ser lembrada de forma regular, facilitando a tomada de decisão para clientes quando necessitarem do produto/serviço anunciado.'],
+['Reaproveitamento da mídia','Cada publicação pode ser usada nas redes sociais, em propostas comerciais e no site da empresa como prova de reconhecimento.'],
+['Estratégia omnichannel','Estar em diferentes ambientes de publicidade, inclusive na imprensa, garantirá que sua marca será vista em vários canais diferentes e percebida por públicos variados.']]);
+$('#faq').innerHTML=[
+['“Já divulgo nas redes sociais”','As redes sociais, sem impulsionamento, alcançam quem já segue a empresa. A imprensa chega sempre a um público novo, além de estar nas redes sociais dos veículos de comunicação.'],
+['“Minha mídia própria já é boa”','O jornalismo, por obedecer regras rígidas de revisão, edição e imparcialidade, confere aos textos publicados uma validação externa à empresa que a divulgação própria não tem.'],
+['“Não tenho verba para isso”','O custo mensal tende a ser menor que o de anúncios recorrentes ou o de um funcionário dedicado. Vale apresentar uma comparação com os valores praticados na região.'],
+['“Tenho que pagar para os sites publicarem?”','Não. Jornalistas não podem cobrar nem receber dinheiro para publicar conteúdo jornalístico, que é o que o Manchete RO produz. Por isso, o trabalho se apoia em pautas bem escolhidas e em textos com valor-notícia que gerem vontade no veículo de ter aquele material em seu site.']
+].map(x=>`<details class="win rv"><i></i><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join('');
+// Carrossel: troque cada .ph por <img src="..." style="width:100%;display:block"> (700×1000 px)
+$('#car').innerHTML=[1,2,3,4,5].map(n=>`<figure class="fr"><div class="ph">Matéria publicada ${n}<br>(700 × 1000 px)</div></figure>`).join('');
+const sl=d=>$('#car').scrollBy({left:d*($('#car>figure').offsetWidth+24),behavior:'smooth'});
+// Preços: diferença constante entre quantidades (de 1 a 30 matérias)
+const P=[['Envio comum',49.9,990,['Produção de texto','Edição de imagens','Disparo para a imprensa']],
+['Release mensurável',99.9,1490,['Produção de texto','Edição de imagens','Disparo para a imprensa','Relatório de publicação','Clipping de sites']],
+['Assessoria de Imprensa',129.9,2290,['Produção de texto','Edição de imagens','Disparo para a imprensa','Relatório de publicação','Clipping de sites','Planejamento estratégico de releases','Agendamento de entrevistas ao vivo','Envio para publicações especializadas','Acompanhamento de comentários']]];
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+$('#pr').innerHTML=P.map((p,i)=>`<article class="win pc rv${i==2?' hl':''}" data-i="${i}"><i></i><svg class="ic"><use href="#i-${I[i*2]}"/></svg><div class="url"><svg><use href="#i-s"/></svg>MANCHETERO</div><span class="tag">${i==2?'Mais completo':'Pacote '+(i+1)}</span><h3>${i+1}. ${p[0]}</h3>${ul(p[3])}
+<div class="n"><b class="q">1</b> matéria</div><input type="range" min="1" max="30" value="1" aria-label="Quantidade de matérias"><output></output><div class="n u"></div><a class="btn" href="#pedido">Pedir orçamento</a></article>`).join('');
+document.querySelectorAll('.pc').forEach(c=>{const p=P[c.dataset.i],st=(p[2]-p[1])/29,rg=c.querySelector('input');
+const up=()=>{const n=+rg.value,v=Math.round((p[1]+st*(n-1))*100)/100;c.querySelector('.q').textContent=n;c.querySelector('output').textContent=brl(v);c.querySelector('.u').textContent='+ '+brl(st)+' a cada matéria adicional'};
+rg.oninput=up;up()});
+// Formulário: cole em SCRIPT_URL a URL do seu Google Apps Script (Code.gs)
+const SCRIPT_URL='';
+const shrink=f=>new Promise(r=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);r({name:f.name.replace(/\.\w+$/,'')+'.jpg',type:'image/jpeg',data:c.toDataURL('image/jpeg',.85).split(',')[1]})};im.src=URL.createObjectURL(f)});
+$('#f').onsubmit=async e=>{e.preventDefault();const f=e.target,b=$('#bt');b.disabled=true;b.textContent='Enviando…';
+try{if(SCRIPT_URL){const fotos=await Promise.all([...f.fotos.files].map(shrink));
+await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({nome:f.nome.value,whatsapp:f.whatsapp.value,email:f.email.value,msg:f.msg.value,fotos})})}
+f.style.display='none';$('#ok').style.display='block';$('#ok').classList.add('in')}catch(x){b.disabled=false;b.textContent='Enviar pedido';alert('Não foi possível enviar. Tente novamente.')}};
+// Revelar ao rolar
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
