@@ -327,7 +327,6 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
 <div class="two"><div class="rv"><div class="kick">Edição especial</div><h2>Publicações <span class="o">recentes</span></h2>
 <p>Navegue aqui por algumas matérias nossas publicadas na imprensa estadual, nacional e internacional.</p>
 <div class="ctl"><button aria-label="Anterior" onclick="sl(-1)">←</button><button aria-label="Próximo" onclick="sl(1)">→</button></div></div>
-<div class="rv" style="text-align:center"><div class="lg" style="display:inline-block;font-size:30px;margin-bottom:18px"><b>Herbert Weil</b><b>Comunicação e Fotografia</b></div><div class="ph" style="aspect-ratio:3/1"><img src="logohw.jpg" alt="Herbert Weil Comunicação e Fotografia" style="height: 120px; width: auto; border-radius: 12px; display: block; margin: 0 auto 4px auto;"><br></div></div></div>
 <div class="car" id="car"></div></div></section>
 
 <section class="sec or"><div class="w">
@@ -438,13 +437,22 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
 <script>
 (function(){
 const S=[
- {t:'Campanha Pronta',logo:'',d:'Produzimos até 30 publicações para redes sociais em 24 horas para você se libertar da preocupação com prazos apertados para sua campanha no Instagram e Facebook'},
- {t:'Palestras e Oficinas',logo:'',d:'Oferecemos palestras, oficinas e workshops sobre comunicação, fotografia, escrita, redes sociais, marketing, Inteligência Artificial, ferramentas digitais, jornalismo, assessoria política, análise de dados e muitos mais'},
- {t:'Fotografia',logo:'',d:'Invista na imagem de sua empresa ou em seu marketing pessoal contratando nossos serviços de fotografia corporativa, ensaio individual, foto still (de produto), cobertura de eventos, fotografia publicitária e outros'},
- {t:'Consultoria',logo:'',d:'Através de uma análise meticulosa da comunicação de sua empresa podemos oferecer um diagnóstico, apontar soluções e revelar caminhos que, muitas vezes, podem passar despercebidos'}
+ {t:'Campanha Pronta',logo:'logocampanhapronta.jpg', link: 'https://herbertweil.github.io/campanhapronta', d:'Produzimos até 30 publicações para redes sociais em 24 horas para você se libertar da preocupação com prazos apertados para sua campanha no Instagram e Facebook'},
+ {t:'Palestras e Oficinas',logo:'fotopalestra.jpg',d:'Oferecemos palestras, oficinas e workshops sobre comunicação, fotografia, escrita, redes sociais, marketing, Inteligência Artificial, ferramentas digitais, jornalismo, assessoria política, análise de dados e muitos mais'},
+ {t:'Fotografia',logo:'logoherbertweilfotografia.jpg',d:'Invista na imagem de sua empresa ou em seu marketing pessoal contratando nossos serviços de fotografia corporativa, ensaio individual, foto still (de produto), cobertura de eventos, fotografia publicitária e outros'},
+ {t:'Consultoria',logo:'fotoconsultoria.jpg',d:'Através de uma análise meticulosa da comunicação de sua empresa podemos oferecer um diagnóstico, apontar soluções e revelar caminhos que, muitas vezes, podem passar despercebidos'}
 ];
 document.getElementById('os-list').innerHTML=S.map((s,i)=>
- `<article class="win os-row rv"><div class="os-logo">${s.logo?`<img src="${s.logo}" alt="Logo ${s.t}">`:'<span>LOGO</span>'}</div><div class="os-tx"><span class="os-n">0${i+1}</span><h3>${s.t}</h3><p>${s.d}.</p></div></article>`).join('');
+ `<article class="win os-row rv">
+   <a href="${s.link}" target="_blank" rel="noopener noreferrer" class="os-logo" aria-label="Conheça o serviço ${s.t}">
+     ${s.logo ? `<img src="${s.logo}" alt="Logo ${s.t}">` : '<span>LOGO</span>'}
+   </a>
+   <div class="os-tx">
+     <span class="os-n">0${i+1}</span>
+     <h3>${s.t}</h3>
+     <p>${s.d}.</p>
+   </div>
+ </article>`).join('');
 })();
 </script>
 
