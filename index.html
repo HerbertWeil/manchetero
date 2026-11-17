@@ -309,8 +309,8 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
 </style>
 
 <section class="cv-sec">
-<a class="cv rv" href="https://canva.link/jnfjb3i1srihwek" target="_blank" rel="noopener">
-  <span class="cv-photo"><span class="cv-ph"><img src="fotocv.jpg" alt="Herbert Weil" style="height: 150px; width: auto; align:left; border-radius: 12px; display: block; margin: 0 auto 4px auto;"></span></span>
+<a class="cv rv" href="COLE_AQUI_O_LINK_DO_CURRICULO" target="_blank" rel="noopener">
+  <span class="cv-photo"><span class="cv-ph">FOTO</span></span>
   <span class="cv-line"></span>
   <span class="cv-act">
     <span class="cv-ic"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
@@ -485,7 +485,7 @@ $('#faq').innerHTML=[
 ['“Tenho que pagar para os sites publicarem?”','Não. Jornalistas não podem cobrar nem receber dinheiro para publicar conteúdo jornalístico, que é o que o Manchete RO produz. Por isso, o trabalho se apoia em pautas bem escolhidas e em textos com valor-notícia que gerem vontade no veículo de ter aquele material em seu site.']
 ].map(x=>`<details class="win rv"><i></i><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join('');
 // Carrossel: troque cada .ph por <img src="..." style="width:100%;display:block"> (700×1000 px)
-  $('#car').innerHTML=[1,2,3,4,5].map(n=><figure class="fr"><div class="ph">Matéria publicada ${n}<br>(700 × 1000 px)</div></figure>).join('');
+$('#car').innerHTML=[1,2,3,4,5].map(n=>`<figure class="fr"><div class="ph">Matéria publicada ${n}<br>(700 × 1000 px)</div></figure>`).join('');
 const sl=d=>$('#car').scrollBy({left:d*($('#car>figure').offsetWidth+24),behavior:'smooth'});
 // Preços: diferença constante entre quantidades (de 1 a 30 matérias)
 const P=[['Envio comum',49.9,990,['Produção de texto','Edição de imagens','Disparo para a imprensa']],
