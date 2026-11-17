@@ -309,8 +309,8 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
 </style>
 
 <section class="cv-sec">
-<a class="cv rv" href="COLE_AQUI_O_LINK_DO_CURRICULO" target="_blank" rel="noopener">
-  <span class="cv-photo"><span class="cv-ph">FOTO</span></span>
+<a class="cv rv" href="https://canva.link/jnfjb3i1srihwek" target="_blank" rel="noopener">
+  <span class="cv-photo"><span class="cv-ph"><img src="fotocv.jpg" alt="Herbert Weil" style="height: 150px; width: auto; align:left; border-radius: 12px; display: block; margin: 0 auto 4px auto;"></span></span>
   <span class="cv-line"></span>
   <span class="cv-act">
     <span class="cv-ic"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
@@ -485,7 +485,47 @@ $('#faq').innerHTML=[
 ['“Tenho que pagar para os sites publicarem?”','Não. Jornalistas não podem cobrar nem receber dinheiro para publicar conteúdo jornalístico, que é o que o Manchete RO produz. Por isso, o trabalho se apoia em pautas bem escolhidas e em textos com valor-notícia que gerem vontade no veículo de ter aquele material em seu site.']
 ].map(x=>`<details class="win rv"><i></i><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join('');
 // Carrossel: troque cada .ph por <img src="..." style="width:100%;display:block"> (700×1000 px)
-$('#car').innerHTML=[1,2,3,4,5].map(n=>`<figure class="fr"><div class="ph">Matéria publicada ${n}<br>(700 × 1000 px)</div></figure>`).join('');
+// 1. Lista com as 14 matérias (substitua os links pelos endereços reais das notícias)
+const materias = [
+  { img: 'materia1.jpg',  link: 'https://www.dailymail.com/sciencetech/article-7809985/Scientists-discover-monkey-frog-human-like-opposable-thumbs.html',  titulo: 'Matéria publicada 1' },
+  { img: 'materia2.jpg',  link: 'https://g1.globo.com/ro/rondonia/noticia/2022/05/17/jiboia-arco-iris-e-encontrada-em-ro-entenda-por-que-ela-e-colorida.ghtml',  titulo: 'Matéria publicada 2' },
+  { img: 'materia3.jpg',  link: 'https://www.rondoniadinamica.com/noticias/2026/11/com-16-atletas-agiv-leva-vilhena-e-rondonia-ao-25-torneio-nacional-de-ginastica-ritmica-em-aparecida-sp,258133.shtml',  titulo: 'Matéria publicada 3' },
+  { img: 'materia4.jpg',  link: 'https://folhadosulonline.com.br/compra-e-venda-trabalhos-academicos-preocupa-em-vilhena-responsaveis-por-cursos-superiores-comentam-divulgacao-profissionais-falsificacao 
+',  titulo: 'Matéria publicada 4' },
+  { img: 'materia5.jpg',  link: 'https://ge.globo.com/sp/presidente-prudente-regiao/noticia/2017/02/melhor-triatleta-do-pais-daniela-paz-visita-prudente-e-mira-top-10-do-mundo.html 
+',  titulo: 'Matéria publicada 5' },
+  { img: 'materia6.jpg',  link: 'https://extraderondonia.com.br/2026/05/04/jesab-reune-650-atletas-e-movimenta-aabb-de-vilhena/ 
+',  titulo: 'Matéria publicada 6' },
+  { img: 'materia7.jpg',  link: 'https://madeiraoweb.com.br/foto-mostra-super-raio-atingindo-vilhena-em-rondonia-durante-temporal/ 
+',  titulo: 'Matéria publicada 7' },
+  { img: 'materia8.jpg',  link: 'https://gazetarondonia.com.br/noticia/4297/viagem-historica-sem-sair-de-casa-conheca-o-museu-da-imagem-de-vilhena-em-rondonia 
+',  titulo: 'Matéria publicada 8' },
+  { img: 'materia9.jpg',  link: 'https://conesulnoticias.com.br/idaron-participa-de-dia-de-campo-de-soja-da-embrapa-com-estacao-de-defesa-fitossanitaria/ 
+',  titulo: 'Matéria publicada 9' },
+  { img: 'materia10.jpg', link: 'https://tudorondonia.com/noticias/novo-site-da-prefeitura-tem-quase-150-mais-acessos-apos-mudanca-de-layout-pela-semcom,44405.shtml 
+', titulo: 'Matéria publicada 10' },
+  { img: 'materia11.jpg', link: 'https://rondoniadigital.com/noticia/44744/governo-de-ro-amplia-acoes-de-inclusao-para-alunos-autistas-na-rede-estadual 
+', titulo: 'Matéria publicada 11' },
+  { img: 'materia12.jpg', link: 'https://portalamazonia.com/cidades/nova-restauracao-do-museu-casa-de-rondon-e-anunciada-em-vilhena/ 
+', titulo: 'Matéria publicada 12' },
+  { img: 'materia13.jpg', link: 'https://rondoniaovivo.com/noticia/cultura/2024/06/15/gratuito-escola-wankabuki-oferece-curso-de-teatro-em-vilhena-inscricoes-estao-abertas.html', titulo: 'Matéria publicada 13' },
+  { img: 'materia14.jpg', link: 'https://rul.com.br/noticias-detalhes.php?cod=16725', titulo: 'Matéria publicada 14' }
+];
+
+// 2. Renderiza os 14 itens no carrossel com link e imagem
+$('#car').innerHTML = materias.map(m => `
+  <figure class="fr">
+    <a href="${m.link}" target="_blank" rel="noopener noreferrer">
+      <img src="${m.img}" alt="${m.titulo}" style="width:100%;display:block">
+    </a>
+  </figure>
+`).join('');
+
+// 3. Controle de rolagem (mantido igual ao original)
+const sl = d => $('#car').scrollBy({
+  left: d * ($('#car>figure').offsetWidth + 24),
+  behavior: 'smooth'
+});
 const sl=d=>$('#car').scrollBy({left:d*($('#car>figure').offsetWidth+24),behavior:'smooth'});
 // Preços: diferença constante entre quantidades (de 1 a 30 matérias)
 const P=[['Envio comum',49.9,990,['Produção de texto','Edição de imagens','Disparo para a imprensa']],
