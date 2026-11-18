@@ -65,8 +65,33 @@ ul.ck li::before{content:"✓";position:absolute;left:0;color:var(--o);font-weig
 figure{margin:0}
 .mq{border-block:1px solid rgba(255,255,255,.1);color:var(--cr);font:500 13px 'Space Grotesk',monospace;letter-spacing:.22em;text-transform:uppercase;overflow:hidden;white-space:nowrap;padding:14px 0;background:rgba(255,255,255,.02)}
 .mq span{display:inline-block;animation:mq 30s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
-.car{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 8px 30px;margin-top:20px}
-.car>figure{flex:0 0 min(700px,82vw);scroll-snap-align:center}.car .ph{aspect-ratio:7/10}
+.car{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  padding:34px 8px 30px;
+  margin-top:20px;
+
+  cursor:grab;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:var(--o) transparent;
+}
+
+.car.arrastando{
+  cursor:grabbing;
+  scroll-snap-type:none;
+}
+
+.car img{
+  -webkit-user-drag:none;
+  user-drag:none;
+  pointer-events:none;
+}.car>figure{flex:0 0 min(700px,82vw);scroll-snap-align:center}.car .ph{aspect-ratio:7/10}
 .ctl{display:flex;gap:12px}.ctl button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,109,41,.6);background:rgba(255,109,41,.1);color:#fff;font-size:22px;cursor:pointer;transition:box-shadow .3s}.ctl button:hover{box-shadow:0 0 28px rgba(255,109,41,.6)}
 ol.st{counter-reset:s;list-style:none;padding:0;margin:0;position:relative}
 ol.st::before{content:"";position:absolute;left:21px;top:24px;bottom:24px;width:2px;background:linear-gradient(var(--o),rgba(255,109,41,.12))}
@@ -689,6 +714,43 @@ const sl = d => {
     left: d * ($('#car>figure').offsetWidth + 24),
     behavior: 'smooth'
   });
+  // Arrastar o carrossel com o mouse
+const car = document.getElementById('car');
+
+let pressionado = false;
+let inicioX = 0;
+let scrollInicial = 0;
+
+car.addEventListener('mousedown', e => {
+  if (e.button !== 0) return;
+
+  pressionado = true;
+  inicioX = e.pageX;
+  scrollInicial = car.scrollLeft;
+
+  car.classList.add('arrastando');
+});
+
+window.addEventListener('mouseup', () => {
+  pressionado = false;
+  car.classList.remove('arrastando');
+});
+
+car.addEventListener('mouseleave', () => {
+  if (pressionado) {
+    pressionado = false;
+    car.classList.remove('arrastando');
+  }
+});
+
+car.addEventListener('mousemove', e => {
+  if (!pressionado) return;
+
+  e.preventDefault();
+
+  const distancia = e.pageX - inicioX;
+  car.scrollLeft = scrollInicial - distancia;
+});
 };
 
 // Preços: diferença constante entre quantidades (de 1 a 30 matérias)
