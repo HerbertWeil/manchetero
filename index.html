@@ -400,13 +400,19 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
       <div class="kick">Edição especial</div>
       <h2>Publicações <span class="o">recentes</span></h2>
       <p>Navegue aqui por matérias que publicamos em sites de repercussão estadual, nacional e internacional nos últimos anos. Clique para abrir a matéria original.</p>   <!-- seu subtítulo -->
-      <div class="ctl"><button onclick="sl(-1)">←</button><button onclick="sl(1)">→</button></div>
+      <div class="ctl">
+  <button onclick="sl(-1)" aria-label="Matéria anterior">←</button>
+  <button onclick="sl(1)" aria-label="Próxima matéria">→</button>
+</div>
     </div>
     <div class="rv" style="text-align:center"><!-- logo --></div>
   </div>
 
   <!-- 2) carrossel: fora do .two, logo depois -->
   <div class="car" id="car"></div>
+  <audio id="som-pagina" preload="auto">
+  <source src="pagina-virando.mp3" type="audio/mpeg">
+</audio>
 
 </div></section>
 
@@ -671,10 +677,19 @@ $('#car').innerHTML = materias.map((m, i) => `
 `).join('');
 
 // BOTÕES DE NAVEGAÇÃO
-const sl = d => $('#car').scrollBy({
-  left: d * ($('#car>figure').offsetWidth + 24),
-  behavior: 'smooth'
-});
+const somPagina = document.getElementById('som-pagina');
+
+const sl = d => {
+  // Reproduz o som de página virando
+  somPagina.currentTime = 0;
+  somPagina.play().catch(() => {});
+
+  // Move o carrossel
+  $('#car').scrollBy({
+    left: d * ($('#car>figure').offsetWidth + 24),
+    behavior: 'smooth'
+  });
+};
 
 // Preços: diferença constante entre quantidades (de 1 a 30 matérias)
 const P=[['Envio comum',49.9,990,['Produção de texto','Edição de imagens','Disparo para a imprensa']],
