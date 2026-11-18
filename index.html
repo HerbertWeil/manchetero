@@ -422,7 +422,7 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
   <!-- 1) cabeçalho: título e subtítulo à esquerda, logo à direita -->
   <div class="two">
     <div class="rv">
-      <div class="kick">Edição especial</div>
+      <div class="kick">Nosso clipping</div>
       <h2>Publicações <span class="o">recentes</span></h2>
       <p>Navegue aqui por matérias que publicamos em sites de repercussão estadual, nacional e internacional nos últimos anos. Clique para abrir a matéria original.</p>   <!-- seu subtítulo -->
       <div class="ctl">
@@ -600,7 +600,7 @@ const win=(t,p,tag='',c='rv',ico,d=I[ni++%6])=>`<article class="win ${c}"><i></i
 const cards=(s,a)=>$(s).innerHTML=a.map(x=>win(x[0],x[1])).join('');
 const ul=a=>'<ul class="ck">'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
 $('#strip').innerHTML=[['Notícia, não anúncio','Chega ao leitor como informação e reforça a confiança no nome da empresa.','Credibilidade','hand'],['Sem pagar pelo espaço','Sua pauta publicada em sites de notícia de todo o Estado.','Economia','coin'],['Texto pronto','Redação, fotos e gráficos prontos para o veículo publicar.','Praticidade','doc'],['Envio no mesmo dia','Para mais de 1.000 contatos de imprensa em Rondônia.','Agilidade','run']].map(x=>win(x[0],x[1],x[2],'',x[3])).join('');
-$('#ad').innerHTML=win('Serviços adicionais embutidos',ul(['Edição das imagens ilustrativas das matérias','Produção de gráficos ou ilustrações','Envio de todos os links onde a matéria foi publicada']),'Incluso')+win('Serviços adicionais opcionais',ul(['Agendamento de entrevistas em rádios, TVs e sites de notícia','Relatório detalhado com todos os sites que publicaram o texto','Clipping de página inteira de cada matéria para registro','Produção de publicações para redes sociais da matéria publicada','Elaboração de plano de assessoria de imprensa para outras matérias da empresa','Envio de matérias a veículos, revistas e canais especializados no nicho da marca','Acompanhamento de comentários nas matérias']),'Opcional');
+$('#ad').innerHTML=win('Serviços embutidos',ul(['Edição das imagens ilustrativas das matérias','Produção de gráficos ou ilustrações','Envio de todos os links onde a matéria foi publicada']),'Incluso')+win('Serviços adicionais opcionais',ul(['Agendamento de entrevistas em rádios, TVs e sites de notícia','Relatório detalhado com todos os sites que publicaram o texto','Clipping de página inteira de cada matéria para registro','Produção de publicações para redes sociais da matéria publicada','Elaboração de plano de assessoria de imprensa para outras matérias da empresa','Envio de matérias a veículos, revistas e canais especializados no nicho da marca','Acompanhamento de comentários nas matérias']),'Opcional');
 cards('#serv',[
 ['Escrita profissional','Produzimos textos noticiosos que seguem a estrutura técnica jornalística exigida pelos sites de notícia para publicar algo.'],
 ['Abrangência','As matérias são enviadas para mais 1.000 e-mails e contatos diretos de jornalistas em todas as regiões do Estado, desde sites de notícia, rádios, emissoras de televisão e colunistas.'],
@@ -754,7 +754,7 @@ car.addEventListener('mousemove', e => {
 };
 
 // Preços: diferença constante entre quantidades (de 1 a 30 matérias)
-const P=[['Envio comum',49.9,990,['Produção de texto','Edição de imagens','Disparo para a imprensa']],
+const P=[['Envio comum',74.9,990,['Produção de texto','Edição de imagens','Disparo para a imprensa']],
 ['Release mensurável',99.9,1490,['Produção de texto','Edição de imagens','Disparo para a imprensa','Relatório de publicação','Clipping de sites']],
 ['Assessoria de Imprensa',129.9,2290,['Produção de texto','Edição de imagens','Disparo para a imprensa','Relatório de publicação','Clipping de sites','Planejamento estratégico de releases','Agendamento de entrevistas ao vivo','Envio para publicações especializadas','Acompanhamento de comentários']]];
 const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
