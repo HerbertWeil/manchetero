@@ -506,6 +506,15 @@ g('bb-rg').innerHTML=[['bulb','Aumentar a lembrança de seu negócio'],['target'
 .os-n{display:block;font:500 12px 'Space Grotesk',monospace;letter-spacing:.2em;color:var(--o);margin-bottom:6px}
 .os-row h3{font-size:clamp(22px,3vw,30px);margin:0 0 8px;padding-right:0}
 .os-row p{margin:0;font-size:16px;line-height:1.65;color:var(--cr)}
+  .os-title-link{
+  color:inherit;
+  text-decoration:none;
+  transition:color .3s;
+}
+
+.os-title-link:hover{
+  color:var(--o);
+}
 @media(max-width:560px){.os-row{gap:18px;padding:20px 18px}.os-logo{width:84px;height:84px;border-radius:16px}.os-row p{font-size:15px}}
 </style>
 
@@ -525,15 +534,25 @@ const S=[
 ];
 document.getElementById('os-list').innerHTML=S.map((s,i)=>
  `<article class="win os-row rv">
-   <a href="${s.link}" target="_blank" rel="noopener noreferrer" class="os-logo" aria-label="Conheça o serviço ${s.t}">
+
+   <a href="${s.link}" target="_blank" rel="noopener noreferrer"
+      class="os-logo" aria-label="Conheça ${s.t}">
      ${s.logo ? `<img src="${s.logo}" alt="Logo ${s.t}">` : '<span>LOGO</span>'}
    </a>
+
    <div class="os-tx">
      <span class="os-n">0${i+1}</span>
-     <h3>${s.t}</h3>
+
+     <h3>
+       <a href="${s.link}" target="_blank" rel="noopener noreferrer"
+          class="os-title-link">${s.t}</a>
+     </h3>
+
      <p>${s.d}.</p>
    </div>
- </article>`).join('');
+
+ </article>`
+).join('');
 })();
 </script>
 
