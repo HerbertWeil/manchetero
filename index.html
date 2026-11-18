@@ -759,9 +759,9 @@ const P=[['Envio comum',74.9,990,['Produção de texto','Edição de imagens','D
 ['Assessoria de Imprensa',129.9,2290,['Produção de texto','Edição de imagens','Disparo para a imprensa','Relatório de publicação','Clipping de sites','Planejamento estratégico de releases','Agendamento de entrevistas ao vivo','Envio para publicações especializadas','Acompanhamento de comentários']]];
 const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 $('#pr').innerHTML=P.map((p,i)=>`<article class="win pc rv${i==2?' hl':''}" data-i="${i}"><i></i><svg class="ic"><use href="#i-${I[i*2]}"/></svg><div class="url"><svg><use href="#i-s"/></svg>MANCHETERO</div><span class="tag">${i==2?'Mais completo':'Pacote '+(i+1)}</span><h3>${i+1}. ${p[0]}</h3>${ul(p[3])}
-<div class="n"><b class="q">1</b> matéria</div><input type="range" min="1" max="30" value="1" aria-label="Quantidade de matérias"><output></output><div class="n u"></div><a class="btn" href="#pedido">Pedir orçamento</a></article>`).join('');
+<div class="n"><b class="q">1</b> <span class="unidade">matéria</span></div><input type="range" min="1" max="30" value="1" aria-label="Quantidade de matérias"><output></output><div class="n u"></div><a class="btn" href="#pedido">Pedir orçamento</a></article>`).join('');
 document.querySelectorAll('.pc').forEach(c=>{const p=P[c.dataset.i],st=(p[2]-p[1])/29,rg=c.querySelector('input');
-const up=()=>{const n=+rg.value,v=Math.round((p[1]+st*(n-1))*100)/100;c.querySelector('.q').textContent=n;c.querySelector('output').textContent=brl(v);c.querySelector('.u').textContent='+ '+brl(st)+' a cada matéria adicional'};
+const up=()=>{const n=+rg.value,v=Math.round((p[1]+st*(n-1))*100)/100;c.querySelector('.q').textContent=n;c.querySelector('.unidade').textContent = n === 1 ? 'matéria' : 'matérias';c.querySelector('output').textContent=brl(v);c.querySelector('.u').textContent='+ '+brl(st)+' a cada matéria adicional'};
 rg.oninput=up;up()});
 // Formulário: cole em SCRIPT_URL a URL do seu Google Apps Script (Code.gs)
 const SCRIPT_URL='';
