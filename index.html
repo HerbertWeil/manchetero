@@ -209,6 +209,441 @@ h1,h2,h3,p,li,.b{overflow-wrap:break-word}
 <p class="sub">Assessoria de imprensa e produção de notícias para empresas, com publicação em sites de todo o Estado.</p>
 <a class="btn" href="#pedido">Faça seu pedido</a><a class="btn ghost" href="#valores">Ver valores</a></div>
 <div class="strip" id="strip"></div></div></div></header>
+  
+<section class="audio-section">
+  <div class="audio-heading">
+    <span class="audio-label">OUÇA E ENTENDA</span>
+    <h2>Escute um áudio breve para entender como funciona</h2>
+  </div>
+
+  <div class="audio-player">
+
+    <button class="audio-play" id="audioPlay" aria-label="Reproduzir áudio">
+      <svg id="audioPlayIcon" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"></path>
+      </svg>
+    </button>
+
+    <div class="audio-content">
+      <div class="audio-wave-area">
+        <div class="audio-waves" id="audioWaves"></div>
+        <div class="audio-progress" id="audioProgress"></div>
+        <input
+          type="range"
+          id="audioSeek"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="Progresso do áudio"
+        >
+      </div>
+
+      <div class="audio-times">
+        <span id="audioCurrent">00:00</span>
+        <span id="audioDuration">00:00</span>
+      </div>
+    </div>
+
+    <audio id="audioFile" preload="metadata">
+      <source src="seu-audio.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+  <button class="audio-transcribe" id="audioTranscribe">
+    <span>Transcrever</span>
+    <svg viewBox="0 0 24 24">
+      <path d="M8 5l8 7-8 7"></path>
+    </svg>
+  </button>
+
+  <div class="audio-loading" id="audioLoading">
+    <span class="audio-spinner"></span>
+    <span>Transcrevendo...</span>
+  </div>
+
+  <div class="audio-transcription" id="audioTranscription">
+    <div class="transcription-title">
+      <span class="transcription-dot"></span>
+      TRANSCRIÇÃO DO ÁUDIO
+    </div>
+
+    <p>
+      COLOQUE AQUI O TEXTO DA TRANSCRIÇÃO DO SEU ÁUDIO.
+      Você pode escrever quantos parágrafos forem necessários.
+    </p>
+  </div>
+</section>
+
+<style>
+.audio-section {
+  width: 100%;
+  max-width: 760px;
+  margin: 60px auto;
+  padding: 35px;
+  background: #1d191c;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  box-sizing: border-box;
+  color: #BABABA;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.audio-heading {
+  margin-bottom: 28px;
+}
+
+.audio-label {
+  color: #FF6D29;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.audio-heading h2 {
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.25;
+  margin: 12px 0 0;
+  font-weight: 700;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #161316;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+}
+
+.audio-play {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #FF6D29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.audio-play:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255,109,41,.3);
+}
+
+.audio-play svg {
+  width: 23px;
+  height: 23px;
+  fill: #161316;
+}
+
+.audio-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.audio-wave-area {
+  position: relative;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.audio-waves {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.audio-wave {
+  flex: 1;
+  min-width: 2px;
+  max-width: 5px;
+  border-radius: 5px;
+  background: #66534b;
+  transition: background .1s;
+}
+
+.audio-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(255,109,41,.18);
+  border-right: 2px solid #FF6D29;
+  pointer-events: none;
+}
+
+.audio-wave-area input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.audio-times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  font-size: 11px;
+  color: #8f8a8c;
+  font-variant-numeric: tabular-nums;
+}
+
+.audio-transcribe {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  color: #FF6D29;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.audio-transcribe:hover {
+  color: #fff;
+}
+
+.audio-transcribe svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.audio-transcribe:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+.audio-loading {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  color: #BABABA;
+  font-size: 12px;
+}
+
+.audio-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,109,41,.2);
+  border-top-color: #FF6D29;
+  border-radius: 50%;
+  animation: audioSpin .7s linear infinite;
+}
+
+@keyframes audioSpin {
+  to { transform: rotate(360deg); }
+}
+
+.audio-transcription {
+  display: none;
+  margin-top: 20px;
+  padding: 22px;
+  background: rgba(255,255,255,.025);
+  border-left: 2px solid #FF6D29;
+  border-radius: 0 10px 10px 0;
+  animation: audioAppear .5s ease;
+}
+
+@keyframes audioAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.transcription-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FF6D29;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+
+.transcription-dot {
+  width: 6px;
+  height: 6px;
+  background: #FF6D29;
+  border-radius: 50%;
+}
+
+.audio-transcription p {
+  color: #BABABA;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+  white-space: pre-line;
+}
+
+@media (max-width: 600px) {
+  .audio-section {
+    padding: 23px 17px;
+    margin: 35px auto;
+  }
+
+  .audio-player {
+    gap: 13px;
+    padding: 15px 12px;
+  }
+
+  .audio-play {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  const audio = document.getElementById('audioFile');
+  const play = document.getElementById('audioPlay');
+  const playIcon = document.getElementById('audioPlayIcon');
+  const waves = document.getElementById('audioWaves');
+  const progress = document.getElementById('audioProgress');
+  const seek = document.getElementById('audioSeek');
+  const current = document.getElementById('audioCurrent');
+  const duration = document.getElementById('audioDuration');
+
+  const transcribe = document.getElementById('audioTranscribe');
+  const loading = document.getElementById('audioLoading');
+  const transcription = document.getElementById('audioTranscription');
+
+  // Criação das ondas visuais
+  const heights = [
+    12,20,28,16,34,22,13,29,38,18,25,14,
+    32,21,39,17,27,12,34,23,15,30,39,19,
+    26,13,35,21,29,16,38,24,12,31,20,36,
+    15,27,39,18,30,13,24,34,17,28,12,36,
+    22,31,15,39,20,27,13,34,18,29,12,25
+  ];
+
+  heights.forEach(height => {
+    const bar = document.createElement('span');
+    bar.className = 'audio-wave';
+    bar.style.height = height + 'px';
+    waves.appendChild(bar);
+  });
+
+  const bars = waves.querySelectorAll('.audio-wave');
+
+  function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return '00:00';
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return String(min).padStart(2, '0') + ':' +
+           String(sec).padStart(2, '0');
+  }
+
+  function updateAudio() {
+    const percent = audio.duration
+      ? (audio.currentTime / audio.duration) * 100
+      : 0;
+
+    progress.style.width = percent + '%';
+    seek.value = percent;
+    current.textContent = formatTime(audio.currentTime);
+
+    bars.forEach((bar, i) => {
+      bar.style.background =
+        i / bars.length * 100 <= percent
+          ? '#FF6D29'
+          : '#66534b';
+    });
+  }
+
+  audio.addEventListener('loadedmetadata', () => {
+    duration.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('timeupdate', updateAudio);
+
+  audio.addEventListener('ended', () => {
+    playIcon.innerHTML = '<path d="M8 5v14l11-7z"></path>';
+    updateAudio();
+  });
+
+  play.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play().then(() => {
+        playIcon.innerHTML =
+          '<path d="M7 5h4v14H7z M14 5h4v14h-4z"></path>';
+      }).catch(() => {
+        alert('Não foi possível reproduzir o áudio. Verifique o arquivo.');
+      });
+    } else {
+      audio.pause();
+      playIcon.innerHTML = '<path d="M8 5v14l11-7z"></path>';
+    }
+  });
+
+  seek.addEventListener('input', () => {
+    if (audio.duration) {
+      audio.currentTime = (seek.value / 100) * audio.duration;
+      updateAudio();
+    }
+  });
+
+  // Exibição simulada da transcrição
+  transcribe.addEventListener('click', () => {
+    transcribe.disabled = true;
+    loading.style.display = 'flex';
+    transcription.style.display = 'none';
+
+    setTimeout(() => {
+      loading.style.display = 'none';
+      transcription.style.display = 'block';
+      transcribe.querySelector('span').textContent = 'Ocultar transcrição';
+      transcribe.disabled = false;
+      transcribe.onclick = null;
+    }, 2000);
+  });
+
+  // Permite ocultar a transcrição depois de exibida
+  transcribe.addEventListener('click', () => {
+    if (transcription.style.display === 'block' &&
+        transcribe.querySelector('span').textContent === 'Ocultar transcrição') {
+      transcription.style.display = 'none';
+      transcribe.querySelector('span').textContent = 'Transcrever';
+    }
+  });
+})();
+</script>
+  
 <div class="mq"><span>Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ Extra! Notícia ✦ Release ✦ Clipping ✦ Imprensa ✦ Rondônia ✦ </span></div>
   
 <section class="sec cr"><div class="w two">
